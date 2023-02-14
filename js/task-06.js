@@ -24,14 +24,26 @@ console.log(dataLength);
 
 // ----------2 варіант---------
 
+// function onInputBlur(event) {
+//   if (textInput.classList.contains(`invalid`)) {
+//     textInput.classList.remove(`invalid`);
+//   } else {
+//     if (textInput.classList.contains(`valid`)) {
+//       textInput.classList.remove(`valid`);
+//     }
+//   }
+
+//   if (textInput.value.length == dataLength) {
+//     textInput.classList.add(`valid`);
+//   } else {
+//     textInput.classList.add(`invalid`);
+//   }
+// }
+
+// ----------3 варіант---------
+
 function onInputBlur(event) {
-  if (textInput.classList.contains(`invalid`)) {
-    textInput.classList.remove(`invalid`);
-  } else {
-    if (textInput.classList.contains(`valid`)) {
-      textInput.classList.remove(`valid`);
-    }
-  }
+  textInput.classList.remove(`invalid`, "valid");
 
   if (textInput.value.length == dataLength) {
     textInput.classList.add(`valid`);
