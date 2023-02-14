@@ -10,7 +10,29 @@ textInput.addEventListener(`blur`, onInputBlur);
 const dataLength = textInput.getAttribute(`data-length`);
 console.log(dataLength);
 
+// ----------1 варіант---------
+
+// function onInputBlur(event) {
+//   if (textInput.value.length == dataLength) {
+//     textInput.classList.add(`valid`);
+//     textInput.classList.remove(`invalid`);
+//   } else {
+//     textInput.classList.add(`invalid`);
+//     textInput.classList.remove(`valid`);
+//   }
+// }
+
+// ----------2 варіант---------
+
 function onInputBlur(event) {
+  if (textInput.classList.contains(`invalid`)) {
+    textInput.classList.remove(`invalid`);
+  } else {
+    if (textInput.classList.contains(`valid`)) {
+      textInput.classList.remove(`valid`);
+    }
+  }
+
   if (textInput.value.length == dataLength) {
     textInput.classList.add(`valid`);
   } else {
